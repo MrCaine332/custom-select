@@ -1,7 +1,123 @@
-.select_utils  {
+.select_wrap {
+  width: 350px;
+  min-height: 50px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 2px solid #888;
+  outline: none;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
 
-  .line {
-
+  &:focus {
+    border-color: lightblue;
   }
+
+  .select_utils  {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .line {
+      align-self: stretch;
+      border: none;
+      width: 2px;
+      background-color: rgb(160, 160, 160);
+    }
+
+    .caret {
+      translate: 0 25%;
+      border: 5px solid transparent;
+      border-top-color: rgb(130, 130, 130);
+    }
+  }
+
+  .selected_items {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    height: 100%;
+    gap: 7px;
+    flex-wrap: wrap;
+
+    .selected_item {
+      padding: 0 5px;
+      height: 32px;
+      border: 1px solid lightgray;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .clear_btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20pt;
+    color: rgb(130, 130, 130);
+
+    &:focus {
+      color: lightblue;
+    }
+  }
+
+  .select_list__wrap {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid lightblue;
+    overflow: hidden;
+
+    .select_list {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+
+      .list_item {
+        width: 100%;
+        padding: 0 10px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        //background-color: lightcyan;
+      }
+      .list_item:hover {
+        background-color: cornflowerblue;
+        color: white;
+      }
+      .list_item__selected {
+        background-color: powderblue;
+        color: black;
+      }
+      .list_item__highlighted {
+        background-color: cornflowerblue;
+        color: white;
+      }
+    }
+  }
+}
+
+.selected_item__single {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
